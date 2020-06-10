@@ -20,6 +20,8 @@
 		366B74F124910D7E00F2B026 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366B74EF24910D7E00F2B026 /* LaunchScreen.storyboard */; };
 		366B74F624910D8D00F2B026 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366B74D324910D2A00F2B026 /* Assets.xcassets */; };
 		36DE79E9249128BA001ABE85 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79E8249128BA001ABE85 /* Login.storyboard */; };
+		36DE79EB24912C7C001ABE85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79EA24912C7C001ABE85 /* GoogleService-Info.plist */; };
+		36DE79ED24912E26001ABE85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79EC24912E26001ABE85 /* GoogleService-Info.plist */; };
 		7AFD33D60B0721233CCFFBD5 /* Pods_Artable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F926C895DF05A626091FD9 /* Pods_Artable.framework */; };
 		93DD76A53A561040AFA8F407 /* Pods_ArtableAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A558FED931819629448EF893 /* Pods_ArtableAdmin.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		366B74F024910D7E00F2B026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		366B74F224910D7E00F2B026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36DE79E8249128BA001ABE85 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		36DE79EA24912C7C001ABE85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36DE79EC24912E26001ABE85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F22100A3D5695D6108A9FD2 /* Pods-ArtableAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtableAdmin/Pods-ArtableAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		9928E38BF0500CA62869203E /* Pods-ArtableAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtableAdmin/Pods-ArtableAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		A558FED931819629448EF893 /* Pods_ArtableAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtableAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +103,7 @@
 				36DE79E8249128BA001ABE85 /* Login.storyboard */,
 				366B74D324910D2A00F2B026 /* Assets.xcassets */,
 				366B74D524910D2A00F2B026 /* LaunchScreen.storyboard */,
+				36DE79EA24912C7C001ABE85 /* GoogleService-Info.plist */,
 				366B74D824910D2A00F2B026 /* Info.plist */,
 			);
 			path = Artable;
@@ -113,6 +118,7 @@
 				366B74EA24910D7D00F2B026 /* Main.storyboard */,
 				366B74EF24910D7E00F2B026 /* LaunchScreen.storyboard */,
 				366B74F224910D7E00F2B026 /* Info.plist */,
+				36DE79EC24912E26001ABE85 /* GoogleService-Info.plist */,
 			);
 			path = ArtableAdmin;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 			files = (
 				36DE79E9249128BA001ABE85 /* Login.storyboard in Resources */,
 				366B74D724910D2A00F2B026 /* LaunchScreen.storyboard in Resources */,
+				36DE79EB24912C7C001ABE85 /* GoogleService-Info.plist in Resources */,
 				366B74D424910D2A00F2B026 /* Assets.xcassets in Resources */,
 				366B74D224910D2900F2B026 /* Main.storyboard in Resources */,
 			);
@@ -232,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				366B74F124910D7E00F2B026 /* LaunchScreen.storyboard in Resources */,
+				36DE79ED24912E26001ABE85 /* GoogleService-Info.plist in Resources */,
 				366B74F624910D8D00F2B026 /* Assets.xcassets in Resources */,
 				366B74EC24910D7D00F2B026 /* Main.storyboard in Resources */,
 			);
