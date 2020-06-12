@@ -10,6 +10,7 @@
 		36576763249237B500C78A8F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576762249237B500C78A8F /* LoginVC.swift */; };
 		36576765249237CF00C78A8F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576764249237CF00C78A8F /* RegisterVC.swift */; };
 		36576769249243B500C78A8F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576768249243B500C78A8F /* Extensions.swift */; };
+		3657676B2492796900C78A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3657676A2492796900C78A8F /* Constants.swift */; };
 		366B74CB24910D2900F2B026 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B74CA24910D2900F2B026 /* AppDelegate.swift */; };
 		366B74CD24910D2900F2B026 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B74CC24910D2900F2B026 /* SceneDelegate.swift */; };
 		366B74CF24910D2900F2B026 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B74CE24910D2900F2B026 /* ViewController.swift */; };
@@ -22,7 +23,7 @@
 		366B74EC24910D7D00F2B026 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366B74EA24910D7D00F2B026 /* Main.storyboard */; };
 		366B74F124910D7E00F2B026 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366B74EF24910D7E00F2B026 /* LaunchScreen.storyboard */; };
 		366B74F624910D8D00F2B026 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366B74D324910D2A00F2B026 /* Assets.xcassets */; };
-		36DE79E9249128BA001ABE85 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79E8249128BA001ABE85 /* Login.storyboard */; };
+		36DE79E9249128BA001ABE85 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79E8249128BA001ABE85 /* LoginStoryboard.storyboard */; };
 		36DE79EB24912C7C001ABE85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79EA24912C7C001ABE85 /* GoogleService-Info.plist */; };
 		36DE79ED24912E26001ABE85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79EC24912E26001ABE85 /* GoogleService-Info.plist */; };
 		7AFD33D60B0721233CCFFBD5 /* Pods_Artable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F926C895DF05A626091FD9 /* Pods_Artable.framework */; };
@@ -35,6 +36,7 @@
 		36576762249237B500C78A8F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		36576764249237CF00C78A8F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		36576768249243B500C78A8F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3657676A2492796900C78A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		366B74C724910D2900F2B026 /* Artable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		366B74CA24910D2900F2B026 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366B74CC24910D2900F2B026 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		366B74EB24910D7D00F2B026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		366B74F024910D7E00F2B026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		366B74F224910D7E00F2B026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36DE79E8249128BA001ABE85 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		36DE79E8249128BA001ABE85 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		36DE79EA24912C7C001ABE85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36DE79EC24912E26001ABE85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F22100A3D5695D6108A9FD2 /* Pods-ArtableAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtableAdmin/Pods-ArtableAdmin.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				366B74D024910D2900F2B026 /* Main.storyboard */,
-				36DE79E8249128BA001ABE85 /* Login.storyboard */,
+				36DE79E8249128BA001ABE85 /* LoginStoryboard.storyboard */,
 				366B74D524910D2A00F2B026 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				36576768249243B500C78A8F /* Extensions.swift */,
+				3657676A2492796900C78A8F /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -283,7 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36DE79E9249128BA001ABE85 /* Login.storyboard in Resources */,
+				36DE79E9249128BA001ABE85 /* LoginStoryboard.storyboard in Resources */,
 				366B74D724910D2A00F2B026 /* LaunchScreen.storyboard in Resources */,
 				36DE79EB24912C7C001ABE85 /* GoogleService-Info.plist in Resources */,
 				366B74D424910D2A00F2B026 /* Assets.xcassets in Resources */,
@@ -386,6 +389,7 @@
 				36576769249243B500C78A8F /* Extensions.swift in Sources */,
 				366B74CB24910D2900F2B026 /* AppDelegate.swift in Sources */,
 				36576763249237B500C78A8F /* LoginVC.swift in Sources */,
+				3657676B2492796900C78A8F /* Constants.swift in Sources */,
 				366B74CD24910D2900F2B026 /* SceneDelegate.swift in Sources */,
 				36576765249237CF00C78A8F /* RegisterVC.swift in Sources */,
 			);
