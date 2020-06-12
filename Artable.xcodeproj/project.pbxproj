@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361F6EFC24937DE3006DA29E /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361F6EFB24937DE3006DA29E /* RoundedViews.swift */; };
 		36576763249237B500C78A8F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576762249237B500C78A8F /* LoginVC.swift */; };
 		36576765249237CF00C78A8F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576764249237CF00C78A8F /* RegisterVC.swift */; };
 		36576769249243B500C78A8F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576768249243B500C78A8F /* Extensions.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		18F926C895DF05A626091FD9 /* Pods_Artable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2539C5356D71257689BFB727 /* Pods-Artable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Artable/Pods-Artable.debug.xcconfig"; sourceTree = "<group>"; };
+		361F6EFB24937DE3006DA29E /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		36576762249237B500C78A8F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		36576764249237CF00C78A8F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		36576768249243B500C78A8F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		361F6EFA24937DC2006DA29E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				361F6EFB24937DE3006DA29E /* RoundedViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3657675E24922A3600C78A8F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		365767662492435800C78A8F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				361F6EFA24937DC2006DA29E /* Views */,
 				365767672492438800C78A8F /* Utilities */,
 				366B74D324910D2A00F2B026 /* Assets.xcassets */,
 			);
@@ -389,6 +400,7 @@
 				36576769249243B500C78A8F /* Extensions.swift in Sources */,
 				366B74CB24910D2900F2B026 /* AppDelegate.swift in Sources */,
 				36576763249237B500C78A8F /* LoginVC.swift in Sources */,
+				361F6EFC24937DE3006DA29E /* RoundedViews.swift in Sources */,
 				3657676B2492796900C78A8F /* Constants.swift in Sources */,
 				366B74CD24910D2900F2B026 /* SceneDelegate.swift in Sources */,
 				36576765249237CF00C78A8F /* RegisterVC.swift in Sources */,
