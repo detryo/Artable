@@ -17,7 +17,7 @@ extension String {
 }
 
 extension UIViewController {
-    // Mostrar alerta con el error al usuario, y la vamos a customizar
+
     func handleFireAuthError(error: Error) {
         
         if let errorCode = AuthErrorCode(rawValue: error._code) {
@@ -28,7 +28,7 @@ extension UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-    // Alerta para comprobar user, password, confirm password e email
+    
     func simpleAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -53,7 +53,6 @@ extension AuthErrorCode {
             return "Your password is too weak. The password must be 6 characters long or more."
         case .wrongPassword:
             return "Your password or email is incorrect."
-            
         default:
             return "Sorry, something went wrong."
         }
