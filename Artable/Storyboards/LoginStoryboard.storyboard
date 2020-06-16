@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="HiV-3j-Lv2" customClass="LoginVC" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bv4-hX-vdX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_left1" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-gp-izU">
@@ -132,7 +132,7 @@
             <objects>
                 <viewController id="Tgc-su-itx" customClass="RegisterVC" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w7g-5Z-Wms">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_right1" translatesAutoresizingMaskIntoConstraints="NO" id="Mvl-Ro-3r8">
@@ -235,8 +235,8 @@
                     <navigationItem key="navigationItem" id="nVa-Qw-evF"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Vvw-WO-Dzb" id="d32-4Y-xI7"/>
+                        <outlet property="confirmPassText" destination="g5e-Te-spM" id="mDY-P8-9Lo"/>
                         <outlet property="conformPassCheckImage" destination="1GU-b3-F4L" id="06u-FU-1Id"/>
-                        <outlet property="conformPassText" destination="g5e-Te-spM" id="mDY-P8-9Lo"/>
                         <outlet property="emailText" destination="5y1-oH-fEL" id="pBa-H8-1p0"/>
                         <outlet property="passCheckImage" destination="6Kt-dk-0Tj" id="Rdy-qc-8Ys"/>
                         <outlet property="passwordText" destination="c6g-dQ-vba" id="5Ha-NU-sVP"/>
@@ -253,7 +253,7 @@
                 <navigationController storyboardIdentifier="LoginVC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="9ou-Jj-TFs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IVs-eY-96i">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

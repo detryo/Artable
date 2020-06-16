@@ -15,7 +15,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var userNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
-    @IBOutlet weak var conformPassText: UITextField!
+    @IBOutlet weak var confirmPassText: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var passCheckImage: UIImageView!
     @IBOutlet weak var conformPassCheckImage: UIImageView!
@@ -24,7 +24,7 @@ class RegisterVC: UIViewController {
         super.viewDidLoad()
         
         passwordText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        conformPassText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        confirmPassText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         
     }
     
@@ -33,7 +33,7 @@ class RegisterVC: UIViewController {
         guard let passText = passwordText.text else { return }
         
         //if we have started typing in the confirm pass text field
-        if textField == conformPassText {
+        if textField == confirmPassText {
             passCheckImage.isHidden = false
             conformPassCheckImage.isHidden = false
         } else {
@@ -41,12 +41,12 @@ class RegisterVC: UIViewController {
             if passText.isEmpty {
                 passCheckImage.isHidden = true
                 conformPassCheckImage.isHidden = true
-                conformPassText.text = ""
+                confirmPassText.text = ""
             }
         }
         
        // Make it so when the password match, the checkmarks turn green
-        if passwordText.text == conformPassText.text {
+        if passwordText.text == confirmPassText.text {
             passCheckImage.image = UIImage(named: AppImages.GreenCheck)
             conformPassCheckImage.image = UIImage(named: AppImages.GreenCheck)
         } else {
@@ -59,7 +59,15 @@ class RegisterVC: UIViewController {
         
         guard let email = emailText.text, email.isNotEmpty,
               let userName = userNameText.text, userName.isNotEmpty,
-              let password = passwordText.text, password.isNotEmpty else { return }
+              let password = passwordText.text, password.isNotEmpty else {
+                simpleAlert(title: "Error", message: "Please fill out all fields.")
+                return
+        }
+        
+        guard let confirmPass = confirmPassText.text, confirmPass == password else {
+            simpleAlert(title: "Error", message: "Password do not match")
+            return
+        }
         
         activityIndicator.startAnimating()
         
@@ -70,6 +78,7 @@ class RegisterVC: UIViewController {
         authUser.link(with: credential) { (result, error) in
             if let error = error {
                 debugPrint(error)
+                self.handleFireAuthError(error: error)
                 self.activityIndicator.stopAnimating()
                 return
             }
