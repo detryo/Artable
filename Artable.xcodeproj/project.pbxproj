@@ -12,6 +12,8 @@
 		36576765249237CF00C78A8F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576764249237CF00C78A8F /* RegisterVC.swift */; };
 		36576769249243B500C78A8F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576768249243B500C78A8F /* Extensions.swift */; };
 		3657676B2492796900C78A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3657676A2492796900C78A8F /* Constants.swift */; };
+		36623714249A217C005C6459 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36623713249A217C005C6459 /* Firebase+Utils.swift */; };
+		36623715249A23E3005C6459 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36623713249A217C005C6459 /* Firebase+Utils.swift */; };
 		366B74CB24910D2900F2B026 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B74CA24910D2900F2B026 /* AppDelegate.swift */; };
 		366B74CD24910D2900F2B026 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B74CC24910D2900F2B026 /* SceneDelegate.swift */; };
 		366B74CF24910D2900F2B026 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B74CE24910D2900F2B026 /* HomeVC.swift */; };
@@ -41,6 +43,7 @@
 		36576764249237CF00C78A8F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		36576768249243B500C78A8F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3657676A2492796900C78A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		36623713249A217C005C6459 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
 		366B74C724910D2900F2B026 /* Artable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		366B74CA24910D2900F2B026 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366B74CC24910D2900F2B026 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 			children = (
 				36576768249243B500C78A8F /* Extensions.swift */,
 				3657676A2492796900C78A8F /* Constants.swift */,
+				36623713249A217C005C6459 /* Firebase+Utils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -411,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36623714249A217C005C6459 /* Firebase+Utils.swift in Sources */,
 				366B74CF24910D2900F2B026 /* HomeVC.swift in Sources */,
 				36576769249243B500C78A8F /* Extensions.swift in Sources */,
 				366B74CB24910D2900F2B026 /* AppDelegate.swift in Sources */,
@@ -427,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36623715249A23E3005C6459 /* Firebase+Utils.swift in Sources */,
 				366B74E924910D7D00F2B026 /* ViewController.swift in Sources */,
 				366B74E524910D7D00F2B026 /* AppDelegate.swift in Sources */,
 				366B74E724910D7D00F2B026 /* SceneDelegate.swift in Sources */,
@@ -593,6 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Artable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,7 +607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.Artable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -612,6 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Artable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -619,7 +627,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.Artable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -631,6 +639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,7 +647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.ArtableAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -650,6 +659,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -657,7 +667,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.ArtableAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
