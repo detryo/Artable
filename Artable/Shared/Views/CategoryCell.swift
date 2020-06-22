@@ -24,6 +24,7 @@ class CategoryCell: UICollectionViewCell {
         
         categoryLabel.text = category.name
         
+        // usamos Kingficher para bajar imagenes, en este caso, de Firebase
         if let url = URL(string: category.imageURL) {
             categoryImage.kf.setImage(with: url)
         }
