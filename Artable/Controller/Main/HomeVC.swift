@@ -35,19 +35,23 @@ class HomeVC: UIViewController {
                 }
             }
         }
-        fetchDocument()
+        fetchCollection()
     }
 
-    func fetchDocument() {
-        let docRef = database.collection("categories").document("sE80A1rPiEuyjDRWUbeC")
+    func fetchCollection() {
         
-        docRef.getDocument { (snap, error) in
-            
-            guard let data = snap?.data() else { return }
+        let collectionReference = database.collection("categories")
         
-            let newCatgeory = Category.init(data: data)
+        collectionReference.getDocuments { (snap, error) in
             
-            self.categories.append(newCatgeory)
+            guard let documents = snap?.documents else { return }
+            
+            for document in documents {
+                
+                let data = document.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
             self.collectionView.reloadData()
         }
     }
