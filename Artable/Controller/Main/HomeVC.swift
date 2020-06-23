@@ -17,13 +17,14 @@ class HomeVC: UIViewController {
     
     var categories = [Category]()
     var selectedCategory: Category!
+    var database : Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        database = Firestore.firestore()
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionView.register(UINib(nibName: Identifiers.categoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.categoryCell)
         
         if Auth.auth().currentUser == nil {
@@ -33,6 +34,28 @@ class HomeVC: UIViewController {
                     debugPrint(error)
                 }
             }
+        }
+        fetchDocument()
+    }
+
+    func fetchDocument() {
+        let docRef = database.collection("categories").document("sE80A1rPiEuyjDRWUbeC")
+        
+        docRef.getDocument { (snap, error) in
+            
+            guard let data = snap?.data() else { return }
+
+            let name = data["name"] as? String ?? ""
+            let id = data["id"] as? String ?? ""
+            let imageURL = data["imageURL"] as? String ?? ""
+            let isActive = data["isActive"] as? Bool ?? true
+            let timeStamp = data["timeStamp"] as? Timestamp ?? Timestamp()
+            
+            let newCatgeory = Category.init(name: name, id: id, imageURL: imageURL,
+                                            isActive: isActive, timeStamp: timeStamp)
+            
+            self.categories.append(newCatgeory)
+            self.collectionView.reloadData()
         }
     }
     

@@ -23,10 +23,15 @@ class CategoryCell: UICollectionViewCell {
     func configureCell(category: Category) {
         
         categoryLabel.text = category.name
-        
-        // usamos Kingficher para bajar imagenes, en este caso, de Firebase
+
         if let url = URL(string: category.imageURL) {
-            categoryImage.kf.setImage(with: url)
+            
+            let placeHolder = UIImage(named: "placeholder")
+            
+            let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.3))]
+            categoryImage.kf.indicatorType = .activity
+            
+            categoryImage.kf.setImage(with: url, placeholder: placeHolder, options: options)
         }
     }
 }
