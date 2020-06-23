@@ -44,15 +44,8 @@ class HomeVC: UIViewController {
         docRef.getDocument { (snap, error) in
             
             guard let data = snap?.data() else { return }
-
-            let name = data["name"] as? String ?? ""
-            let id = data["id"] as? String ?? ""
-            let imageURL = data["imageURL"] as? String ?? ""
-            let isActive = data["isActive"] as? Bool ?? true
-            let timeStamp = data["timeStamp"] as? Timestamp ?? Timestamp()
-            
-            let newCatgeory = Category.init(name: name, id: id, imageURL: imageURL,
-                                            isActive: isActive, timeStamp: timeStamp)
+        
+            let newCatgeory = Category.init(data: data)
             
             self.categories.append(newCatgeory)
             self.collectionView.reloadData()
