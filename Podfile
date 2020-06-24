@@ -9,7 +9,6 @@ def shared_pods
   pod 'IQKeyboardManagerSwift'
   pod 'Kingfisher', '~> 5.0'
   pod 'CodableFirebase'
-
 end
 
 target 'Artable' do
