@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--Artable-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,12 +49,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UEd-jp-BFt">
+                    <navigationItem key="navigationItem" title="Artable" id="UEd-jp-BFt">
                         <barButtonItem key="leftBarButtonItem" title="Login" id="bU5-Ef-Gva">
                             <connections>
                                 <action selector="loginOutClicked:" destination="BYZ-38-t0r" id="1db-Nq-35v"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="bar_button_cart" id="Ixn-bc-08q"/>
+                            <barButtonItem image="bar_button_star" id="mle-QX-C4P"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Yna-LQ-3k1" id="iYT-Sl-Wc6"/>
@@ -113,6 +117,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qrz-qh-b88">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -125,6 +135,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bar_button_cart" width="27" height="24"/>
+        <image name="bar_button_star" width="26" height="26"/>
         <image name="bg_cat3" width="1500" height="1875"/>
     </resources>
 </document>
