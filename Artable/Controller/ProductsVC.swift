@@ -114,6 +114,17 @@ extension ProductsVC: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let viewController = ProductDetailVC()
+        let selectedProduct = products[indexPath.row]
+        
+        viewController.product = selectedProduct
+        viewController.modalTransitionStyle = .crossDissolve
+        viewController.modalPresentationStyle = .overCurrentContext
+        present(viewController, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }

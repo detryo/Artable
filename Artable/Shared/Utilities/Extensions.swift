@@ -24,3 +24,7 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension Locale {
+    static let uk = Locale(identifier: "en_GB")
+}
