@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class AddEditCategoryVC: UIViewController {
 
@@ -28,10 +29,50 @@ class AddEditCategoryVC: UIViewController {
         launchImagePicker()
     }
     
-
     @IBAction func addCategoryClicked(_ sender: Any) {
+        activityIndicator.startAnimating()
+        uploadImageThenDocument()
     }
     
+    func uploadImageThenDocument() {
+        
+        guard let image = categoryImage.image,
+              let categoryName = nameText.text, categoryName.isNotEmpty else {
+                simpleAlert(title: "Error", message: "Must add category image and name")
+                return
+        }
+        guard let imageData = image.jpegData(compressionQuality: 0.2) else { return }
+        
+        let imageRef = Storage.storage().reference().child("/categoryImages/\(categoryName).jpg")
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        imageRef.putData(imageData, metadata: metaData) { (metaData, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                self.simpleAlert(title: "Error", message: "Unable to upload image")
+                self.activityIndicator.stopAnimating()
+                return
+            }
+
+            imageRef.downloadURL { (url, error) in
+                if let error = error {
+                    debugPrint(error.localizedDescription)
+                    self.simpleAlert(title: "Error", message: "Unable to upload image")
+                    self.activityIndicator.stopAnimating()
+                    return
+                }
+                
+                guard let url = url else { return }
+                print(url)
+                
+                 // Uplodad new Category document to the Firestore categories collection
+            }
+        }
+    }
+    
+    func uploadDocuments() {
+    }
 }
 
 extension AddEditCategoryVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
