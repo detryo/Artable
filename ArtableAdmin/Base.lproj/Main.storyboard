@@ -171,6 +171,7 @@
                     <navigationItem key="navigationItem" id="6Tr-yf-wyI"/>
                     <connections>
                         <outlet property="activityIndicator" destination="KfC-v2-gb5" id="lmG-JH-lFj"/>
+                        <outlet property="addButton" destination="Jp1-uX-c7I" id="fkm-bD-o5x"/>
                         <outlet property="categoryImage" destination="WFu-Zt-Rke" id="tH7-Ww-OV0"/>
                         <outlet property="nameText" destination="hz9-rh-jfo" id="mhN-dO-jl4"/>
                     </connections>
@@ -226,7 +227,87 @@
                     <view key="view" contentMode="scaleToFill" id="hoB-Q5-QUh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znY-bA-soZ">
+                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M3R-PV-ZBu">
+                                <rect key="frame" x="20" y="154" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Description Bellow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fn-mJ-kM4">
+                                <rect key="frame" x="96.5" y="208" width="221" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d92-bA-D75">
+                                <rect key="frame" x="20" y="246" width="374" height="130"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="P7t-CM-ZRz"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Add Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BER-IY-ad4">
+                                <rect key="frame" x="20" y="396" width="374" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="VL2-Yx-1Oi" customClass="RoundedImageView" customModule="ArtableAdmin" customModuleProvider="target">
+                                <rect key="frame" x="107" y="434" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bvI-nH-vss"/>
+                                    <constraint firstAttribute="height" constant="200" id="zpP-vi-HXb"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nfe-o2-uKH">
+                                <rect key="frame" x="188.5" y="654" width="37" height="37"/>
+                                <color key="color" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhK-Pa-jZH" customClass="RoundedButton" customModule="ArtableAdmin" customModuleProvider="target">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="X8P-Az-41P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Add Product">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="znY-bA-soZ" firstAttribute="top" secondItem="FrD-7D-JsT" secondAttribute="top" constant="20" id="0FQ-by-G6d"/>
+                            <constraint firstItem="FrD-7D-JsT" firstAttribute="trailing" secondItem="M3R-PV-ZBu" secondAttribute="trailing" constant="20" id="2FQ-PX-EXM"/>
+                            <constraint firstItem="FrD-7D-JsT" firstAttribute="trailing" secondItem="d92-bA-D75" secondAttribute="trailing" constant="20" id="2R5-NP-zle"/>
+                            <constraint firstItem="7fn-mJ-kM4" firstAttribute="top" secondItem="M3R-PV-ZBu" secondAttribute="bottom" constant="20" id="Dc7-RI-LQI"/>
+                            <constraint firstItem="d92-bA-D75" firstAttribute="leading" secondItem="FrD-7D-JsT" secondAttribute="leading" constant="20" id="E4F-o9-GSs"/>
+                            <constraint firstItem="VL2-Yx-1Oi" firstAttribute="top" secondItem="BER-IY-ad4" secondAttribute="bottom" constant="12" id="FWl-cf-kL7"/>
+                            <constraint firstItem="M3R-PV-ZBu" firstAttribute="leading" secondItem="FrD-7D-JsT" secondAttribute="leading" constant="20" id="HvC-S7-AGP"/>
+                            <constraint firstItem="FrD-7D-JsT" firstAttribute="trailing" secondItem="mhK-Pa-jZH" secondAttribute="trailing" constant="20" id="I0u-1h-Mes"/>
+                            <constraint firstItem="mhK-Pa-jZH" firstAttribute="leading" secondItem="FrD-7D-JsT" secondAttribute="leading" constant="20" id="KS2-n9-wf2"/>
+                            <constraint firstItem="M3R-PV-ZBu" firstAttribute="top" secondItem="znY-bA-soZ" secondAttribute="bottom" constant="12" id="LrQ-uf-MJg"/>
+                            <constraint firstItem="BER-IY-ad4" firstAttribute="leading" secondItem="FrD-7D-JsT" secondAttribute="leading" constant="20" id="Nfp-Al-j0k"/>
+                            <constraint firstItem="FrD-7D-JsT" firstAttribute="trailing" secondItem="znY-bA-soZ" secondAttribute="trailing" constant="20" id="OXV-iN-NFU"/>
+                            <constraint firstItem="Nfe-o2-uKH" firstAttribute="centerX" secondItem="hoB-Q5-QUh" secondAttribute="centerX" id="TDF-2x-uI6"/>
+                            <constraint firstItem="BER-IY-ad4" firstAttribute="top" secondItem="d92-bA-D75" secondAttribute="bottom" constant="20" id="UFg-86-qcF"/>
+                            <constraint firstItem="FrD-7D-JsT" firstAttribute="bottom" secondItem="mhK-Pa-jZH" secondAttribute="bottom" constant="20" id="Ua3-mZ-Zll"/>
+                            <constraint firstItem="Nfe-o2-uKH" firstAttribute="top" secondItem="VL2-Yx-1Oi" secondAttribute="bottom" constant="20" id="WfD-Xo-t3S"/>
+                            <constraint firstItem="FrD-7D-JsT" firstAttribute="trailing" secondItem="BER-IY-ad4" secondAttribute="trailing" constant="20" id="ZAg-wY-kaz"/>
+                            <constraint firstItem="znY-bA-soZ" firstAttribute="leading" secondItem="FrD-7D-JsT" secondAttribute="leading" constant="20" id="h9d-Kg-ay8"/>
+                            <constraint firstItem="7fn-mJ-kM4" firstAttribute="centerX" secondItem="hoB-Q5-QUh" secondAttribute="centerX" id="qIk-gc-pWg"/>
+                            <constraint firstItem="VL2-Yx-1Oi" firstAttribute="centerX" secondItem="hoB-Q5-QUh" secondAttribute="centerX" id="tHw-b4-cNO"/>
+                            <constraint firstItem="d92-bA-D75" firstAttribute="top" secondItem="7fn-mJ-kM4" secondAttribute="bottom" constant="12" id="z6O-Dp-kTy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FrD-7D-JsT"/>
                     </view>
                     <navigationItem key="navigationItem" id="zxc-XS-cFL"/>

@@ -15,6 +15,7 @@ class AddEditCategoryVC: UIViewController {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var categoryImage: RoundedImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addButton: UIButton!
     
     var categoryToEdit: Category?
     
@@ -25,6 +26,20 @@ class AddEditCategoryVC: UIViewController {
         tap.numberOfTapsRequired = 1
         categoryImage.isUserInteractionEnabled = true
         categoryImage.addGestureRecognizer(tap)
+        
+        // if we are editing categoryToEdit will not be != nil
+        if let category = categoryToEdit {
+            
+            nameText.text = category.name
+            addButton.setTitle("Save Changes", for: .normal)
+            
+            if let url = URL(string: category.imageURL) {
+                
+                categoryImage.contentMode = .scaleAspectFill
+                categoryImage.kf.setImage(with: url)
+                 
+            }
+        }
     }
     
     @objc func imageTapped(_ tap: UITapGestureRecognizer) {
@@ -73,9 +88,17 @@ class AddEditCategoryVC: UIViewController {
         var docRef: DocumentReference!
         var category = Category.init(name: nameText.text!, id: "", imageURL: url, timeStamp: Timestamp())
         
-        docRef = Firestore.firestore().collection("categories").document()
-        category.id = docRef.documentID
-        
+        if let categoryToEdit = categoryToEdit {
+            // we are editing
+            docRef = Firestore.firestore().collection("categories").document(categoryToEdit.id)
+            category.id = categoryToEdit.id
+            
+        } else {
+            // new category
+            docRef = Firestore.firestore().collection("categories").document()
+            category.id = docRef.documentID
+        }
+
         let data = Category.modelToData(category: category)
         docRef.setData(data, merge: true) { (error) in
             
