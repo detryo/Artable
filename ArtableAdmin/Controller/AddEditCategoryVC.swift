@@ -8,12 +8,15 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
 
 class AddEditCategoryVC: UIViewController {
 
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var categoryImage: RoundedImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var categoryToEdit: Category?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,6 @@ class AddEditCategoryVC: UIViewController {
     }
     
     @objc func imageTapped(_ tap: UITapGestureRecognizer) {
-        // launch the image picker
         launchImagePicker()
     }
     
@@ -49,29 +51,47 @@ class AddEditCategoryVC: UIViewController {
         
         imageRef.putData(imageData, metadata: metaData) { (metaData, error) in
             if let error = error {
-                debugPrint(error.localizedDescription)
-                self.simpleAlert(title: "Error", message: "Unable to upload image")
-                self.activityIndicator.stopAnimating()
+                self.handlerError(error: error, message: "Unable to upload image")
                 return
             }
 
             imageRef.downloadURL { (url, error) in
                 if let error = error {
-                    debugPrint(error.localizedDescription)
-                    self.simpleAlert(title: "Error", message: "Unable to upload image")
-                    self.activityIndicator.stopAnimating()
+                    self.handlerError(error: error, message: "Unable to upload image")
                     return
                 }
                 
                 guard let url = url else { return }
                 print(url)
-                
-                 // Uplodad new Category document to the Firestore categories collection
+                self.uploadDocuments(url: url.absoluteString)
             }
         }
     }
     
-    func uploadDocuments() {
+    func uploadDocuments(url: String) {
+        
+        var docRef: DocumentReference!
+        var category = Category.init(name: nameText.text!, id: "", imageURL: url, timeStamp: Timestamp())
+        
+        docRef = Firestore.firestore().collection("categories").document()
+        category.id = docRef.documentID
+        
+        let data = Category.modelToData(category: category)
+        docRef.setData(data, merge: true) { (error) in
+            
+            if let error = error {
+                self.handlerError(error: error, message: "Unable to upload new Category to Firebase")
+                return
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func handlerError(error: Error, message: String) {
+        
+        debugPrint(error.localizedDescription)
+        self.simpleAlert(title: "Error", message: message)
+        self.activityIndicator.stopAnimating()
     }
 }
 
