@@ -282,6 +282,9 @@
                                 <state key="normal" title="Add Product">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addClicked:" destination="r8z-Qy-HDk" eventType="touchUpInside" id="JCi-Wn-BTQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -311,6 +314,14 @@
                         <viewLayoutGuide key="safeArea" id="FrD-7D-JsT"/>
                     </view>
                     <navigationItem key="navigationItem" id="zxc-XS-cFL"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Nfe-o2-uKH" id="ES0-bY-oo3"/>
+                        <outlet property="addButton" destination="mhK-Pa-jZH" id="jSE-Aw-vo3"/>
+                        <outlet property="productDescTextView" destination="d92-bA-D75" id="pzz-zS-CD2"/>
+                        <outlet property="productImageView" destination="VL2-Yx-1Oi" id="xS2-TX-mAX"/>
+                        <outlet property="productNameText" destination="znY-bA-soZ" id="762-TZ-kfZ"/>
+                        <outlet property="productPriceText" destination="M3R-PV-ZBu" id="ZeS-IS-iaa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZC-QZ-3pp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

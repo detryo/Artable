@@ -199,9 +199,9 @@
 		3659EB2C24A9FC60007CBC20 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3660389E24AB4E2200D1060D /* AdminProduccVC.swift */,
 				366B74E824910D7D00F2B026 /* AdminHomeVC.swift */,
 				3659EB2D24A9FCBD007CBC20 /* AddEditCategoryVC.swift */,
-				3660389E24AB4E2200D1060D /* AdminProduccVC.swift */,
 				366038A024AB543E00D1060D /* AddEditProductsVC.swift */,
 			);
 			path = Controller;

@@ -21,7 +21,7 @@ class AddEditCategoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)))
         tap.numberOfTapsRequired = 1
         categoryImage.isUserInteractionEnabled = true
@@ -47,7 +47,6 @@ class AddEditCategoryVC: UIViewController {
     }
     
     @IBAction func addCategoryClicked(_ sender: Any) {
-        activityIndicator.startAnimating()
         uploadImageThenDocument()
     }
     
@@ -58,6 +57,9 @@ class AddEditCategoryVC: UIViewController {
                 simpleAlert(title: "Error", message: "Must add category image and name")
                 return
         }
+        
+        activityIndicator.startAnimating()
+        
         guard let imageData = image.jpegData(compressionQuality: 0.2) else { return }
         
         let imageRef = Storage.storage().reference().child("/categoryImages/\(categoryName).jpg")
