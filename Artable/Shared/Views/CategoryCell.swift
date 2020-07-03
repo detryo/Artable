@@ -23,7 +23,7 @@ class CategoryCell: UICollectionViewCell {
     func configureCell(category: Category) {
         
         categoryLabel.text = category.name
-
+// Cogemos la URL de Firebase, y hacemos una pequeña animacion con el Place Holder.
         if let url = URL(string: category.imageURL) {
             
             let placeHolder = UIImage(named: "placeholder")

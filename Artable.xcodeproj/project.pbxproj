@@ -22,7 +22,7 @@
 		3659EB2A24A9F871007CBC20 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3667CAEF24A4B38200D2630C /* ProductDetailVC.swift */; };
 		3659EB2B24A9F87A007CBC20 /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3667CAF024A4B38200D2630C /* ProductDetailVC.xib */; };
 		3659EB2E24A9FCBD007CBC20 /* AddEditCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659EB2D24A9FCBD007CBC20 /* AddEditCategoryVC.swift */; };
-		3660389F24AB4E2200D1060D /* AdminProduccVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3660389E24AB4E2200D1060D /* AdminProduccVC.swift */; };
+		3660389F24AB4E2200D1060D /* AdminProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3660389E24AB4E2200D1060D /* AdminProductsVC.swift */; };
 		366038A124AB543E00D1060D /* AddEditProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366038A024AB543E00D1060D /* AddEditProductsVC.swift */; };
 		36623714249A217C005C6459 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36623713249A217C005C6459 /* Firebase+Utils.swift */; };
 		36623715249A23E3005C6459 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36623713249A217C005C6459 /* Firebase+Utils.swift */; };
@@ -50,6 +50,7 @@
 		366B74EC24910D7D00F2B026 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366B74EA24910D7D00F2B026 /* Main.storyboard */; };
 		366B74F124910D7E00F2B026 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366B74EF24910D7E00F2B026 /* LaunchScreen.storyboard */; };
 		366B74F624910D8D00F2B026 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366B74D324910D2A00F2B026 /* Assets.xcassets */; };
+		3684408F24AF7AB400B1023A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3684408E24AF7AB400B1023A /* User.swift */; };
 		36D9332B249910ED0082C420 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D93329249910ED0082C420 /* ForgotPasswordVC.swift */; };
 		36D9332C249910ED0082C420 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D9332A249910ED0082C420 /* ForgotPasswordVC.xib */; };
 		36DE79E9249128BA001ABE85 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79E8249128BA001ABE85 /* LoginStoryboard.storyboard */; };
@@ -71,7 +72,7 @@
 		36576768249243B500C78A8F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3657676A2492796900C78A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3659EB2D24A9FCBD007CBC20 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
-		3660389E24AB4E2200D1060D /* AdminProduccVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProduccVC.swift; sourceTree = "<group>"; };
+		3660389E24AB4E2200D1060D /* AdminProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductsVC.swift; sourceTree = "<group>"; };
 		366038A024AB543E00D1060D /* AddEditProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProductsVC.swift; sourceTree = "<group>"; };
 		36623713249A217C005C6459 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
 		36623716249A333C005C6459 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		366B74EB24910D7D00F2B026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		366B74F024910D7E00F2B026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		366B74F224910D7E00F2B026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3684408E24AF7AB400B1023A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		36D93329249910ED0082C420 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		36D9332A249910ED0082C420 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		36DE79E8249128BA001ABE85 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				36623716249A333C005C6459 /* Category.swift */,
 				3626F780249A63F800365252 /* Product.swift */,
+				3684408E24AF7AB400B1023A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,7 +202,7 @@
 		3659EB2C24A9FC60007CBC20 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3660389E24AB4E2200D1060D /* AdminProduccVC.swift */,
+				3660389E24AB4E2200D1060D /* AdminProductsVC.swift */,
 				366B74E824910D7D00F2B026 /* AdminHomeVC.swift */,
 				3659EB2D24A9FCBD007CBC20 /* AddEditCategoryVC.swift */,
 				366038A024AB543E00D1060D /* AddEditProductsVC.swift */,
@@ -501,6 +504,7 @@
 				36576763249237B500C78A8F /* LoginVC.swift in Sources */,
 				3626F77E249A628700365252 /* ProductsVC.swift in Sources */,
 				361F6EFC24937DE3006DA29E /* RoundedViews.swift in Sources */,
+				3684408F24AF7AB400B1023A /* User.swift in Sources */,
 				36D9332B249910ED0082C420 /* ForgotPasswordVC.swift in Sources */,
 				3657676B2492796900C78A8F /* Constants.swift in Sources */,
 				366B74CD24910D2900F2B026 /* SceneDelegate.swift in Sources */,
@@ -518,7 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36623715249A23E3005C6459 /* Firebase+Utils.swift in Sources */,
-				3660389F24AB4E2200D1060D /* AdminProduccVC.swift in Sources */,
+				3660389F24AB4E2200D1060D /* AdminProductsVC.swift in Sources */,
 				3659EB2724A9F591007CBC20 /* RoundedViews.swift in Sources */,
 				36E6DF6824A9F3AB00067878 /* HomeVC.swift in Sources */,
 				3626F782249A63F800365252 /* Product.swift in Sources */,
@@ -697,7 +701,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Artable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -717,7 +721,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Artable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -737,7 +741,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -757,7 +761,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

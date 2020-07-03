@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="1823" y="100"/>
         </scene>
-        <!--Admin ProduccVC-->
+        <!--Admin ProductsVC-->
         <scene sceneID="voD-5U-v73">
             <objects>
-                <viewController id="KyC-vP-zZB" customClass="AdminProduccVC" customModule="ArtableAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KyC-vP-zZB" customClass="AdminProductsVC" customModule="ArtableAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s2Z-dI-vdb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

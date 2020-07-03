@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminProduccVC: ProductsVC {
+class AdminProductsVC: ProductsVC {
     
     var selectedProduct : Product?
 

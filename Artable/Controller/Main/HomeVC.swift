@@ -100,8 +100,6 @@ class HomeVC: UIViewController {
         })
     }
     
-    
-    
     func presentLoginController() {
         let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: StoryboardID.LoginVC)
