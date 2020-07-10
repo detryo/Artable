@@ -12,6 +12,11 @@
 		3626F77F249A62B500365252 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3626F77D249A628700365252 /* ProductsVC.swift */; };
 		3626F781249A63F800365252 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3626F780249A63F800365252 /* Product.swift */; };
 		3626F782249A63F800365252 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3626F780249A63F800365252 /* Product.swift */; };
+		363306A524B87969008614C0 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363306A424B87969008614C0 /* CheckoutVC.swift */; };
+		363306A824B883DF008614C0 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363306A624B883DF008614C0 /* CartItemCell.swift */; };
+		363306A924B883DF008614C0 /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363306A724B883DF008614C0 /* CartItemCell.xib */; };
+		363306AA24B883E9008614C0 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363306A624B883DF008614C0 /* CartItemCell.swift */; };
+		363306AC24B88B20008614C0 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363306AB24B88B20008614C0 /* StripeCart.swift */; };
 		36437F7A24B1DF2C0087FF0C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36437F7924B1DF2C0087FF0C /* UserService.swift */; };
 		36576763249237B500C78A8F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576762249237B500C78A8F /* LoginVC.swift */; };
 		36576765249237CF00C78A8F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36576764249237CF00C78A8F /* RegisterVC.swift */; };
@@ -68,6 +73,10 @@
 		361F6EFB24937DE3006DA29E /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		3626F77D249A628700365252 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		3626F780249A63F800365252 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		363306A424B87969008614C0 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		363306A624B883DF008614C0 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		363306A724B883DF008614C0 /* CartItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCell.xib; sourceTree = "<group>"; };
+		363306AB24B88B20008614C0 /* StripeCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeCart.swift; sourceTree = "<group>"; };
 		36437F7924B1DF2C0087FF0C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		36576762249237B500C78A8F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		36576764249237CF00C78A8F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -137,6 +146,7 @@
 				361F6EFB24937DE3006DA29E /* RoundedViews.swift */,
 				36623719249A35AB005C6459 /* CategoryCell.swift */,
 				366508A624A0AD7E005E7869 /* ProductCell.swift */,
+				363306A624B883DF008614C0 /* CartItemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,15 +166,17 @@
 				3626F77D249A628700365252 /* ProductsVC.swift */,
 				366B74CA24910D2900F2B026 /* AppDelegate.swift */,
 				366B74CC24910D2900F2B026 /* SceneDelegate.swift */,
+				363306A424B87969008614C0 /* CheckoutVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3657675F24922A3C00C78A8F /* View */ = {
+		3657675F24922A3C00C78A8F /* Stripe */ = {
 			isa = PBXGroup;
 			children = (
+				363306AB24B88B20008614C0 /* StripeCart.swift */,
 			);
-			path = View;
+			path = Stripe;
 			sourceTree = "<group>";
 		};
 		3657676024922A4100C78A8F /* Model */ = {
@@ -225,6 +237,7 @@
 			children = (
 				3662371A249A35AB005C6459 /* CategoryCell.xib */,
 				366508A724A0AD7E005E7869 /* ProductCell.xib */,
+				363306A724B883DF008614C0 /* CartItemCell.xib */,
 			);
 			path = Xibx;
 			sourceTree = "<group>";
@@ -263,7 +276,7 @@
 		366B74C924910D2900F2B026 /* Artable */ = {
 			isa = PBXGroup;
 			children = (
-				3657675F24922A3C00C78A8F /* View */,
+				3657675F24922A3C00C78A8F /* Stripe */,
 				36437F7824B1DE840087FF0C /* Services */,
 				3657675E24922A3600C78A8F /* Controller */,
 				36D933282499108B0082C420 /* XIBs */,
@@ -410,6 +423,7 @@
 				366B74D424910D2A00F2B026 /* Assets.xcassets in Resources */,
 				3667CAF224A4B38200D2630C /* ProductDetailVC.xib in Resources */,
 				36D9332C249910ED0082C420 /* ForgotPasswordVC.xib in Resources */,
+				363306A924B883DF008614C0 /* CartItemCell.xib in Resources */,
 				366B74D224910D2900F2B026 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +522,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				363306A524B87969008614C0 /* CheckoutVC.swift in Sources */,
 				36623714249A217C005C6459 /* Firebase+Utils.swift in Sources */,
+				363306A824B883DF008614C0 /* CartItemCell.swift in Sources */,
 				366B74CF24910D2900F2B026 /* HomeVC.swift in Sources */,
 				36437F7A24B1DF2C0087FF0C /* UserService.swift in Sources */,
 				36576769249243B500C78A8F /* Extensions.swift in Sources */,
@@ -524,6 +540,7 @@
 				36623717249A333C005C6459 /* Category.swift in Sources */,
 				366508A824A0AD7E005E7869 /* ProductCell.swift in Sources */,
 				3667CAF124A4B38200D2630C /* ProductDetailVC.swift in Sources */,
+				363306AC24B88B20008614C0 /* StripeCart.swift in Sources */,
 				3662371B249A35AB005C6459 /* CategoryCell.swift in Sources */,
 				3626F781249A63F800365252 /* Product.swift in Sources */,
 			);
@@ -547,6 +564,7 @@
 				3659EB2924A9F83F007CBC20 /* Extensions.swift in Sources */,
 				366508A924A0AD7E005E7869 /* ProductCell.swift in Sources */,
 				366B74E724910D7D00F2B026 /* SceneDelegate.swift in Sources */,
+				363306AA24B883E9008614C0 /* CartItemCell.swift in Sources */,
 				3662371C249A35AB005C6459 /* CategoryCell.swift in Sources */,
 				3659EB2824A9F5BF007CBC20 /* Constants.swift in Sources */,
 				3659EB2A24A9F871007CBC20 /* ProductDetailVC.swift in Sources */,
