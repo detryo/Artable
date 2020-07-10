@@ -14,16 +14,25 @@ class CartItemCell: UITableViewCell {
     @IBOutlet weak var productTitlelabel: UILabel!
     @IBOutlet weak var removeItemButton: UIButton!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-    @IBAction func removeItemClicked(_ sender: Any) {
+    func configureCell(product: Product) {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale.uk
+        
+        if let price = formatter.string(from: product.price as NSNumber) {
+            productTitlelabel.text = "\(product.name) \(price)"
+        }
+        
+        if let url = URL(string: product.imageURL) {
+            productImage.kf.setImage(with: url)
+        }
     }
     
+    @IBAction func removeItemClicked(_ sender: Any) {
+    }
 }

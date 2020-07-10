@@ -164,9 +164,9 @@
 			children = (
 				366508AC24A0B6A3005E7869 /* Main */,
 				3626F77D249A628700365252 /* ProductsVC.swift */,
+				363306A424B87969008614C0 /* CheckoutVC.swift */,
 				366B74CA24910D2900F2B026 /* AppDelegate.swift */,
 				366B74CC24910D2900F2B026 /* SceneDelegate.swift */,
-				363306A424B87969008614C0 /* CheckoutVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
