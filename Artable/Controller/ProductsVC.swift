@@ -17,9 +17,9 @@ class ProductsVC: UIViewController {
     // Variables
     var products = [Product]()
     var category: Category!
-    
     var listener : ListFormatter!
     var database : Firestore!
+    var showFavorites = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,15 @@ class ProductsVC: UIViewController {
     
     func setupQuery() {
         
-        listener = database.products(category: category.id).addSnapshotListener({ (snap, error) in
+        var ref : Query!
+        
+        if showFavorites {
+            ref = database.collection("users").document(UserService.user.id).collection("favorites")
+        } else {
+            ref = database.products(category: category.id)
+        }
+        
+        listener = ref.addSnapshotListener({ (snap, error) in
             
             if let error =  error {
                 debugPrint(error.localizedDescription)
@@ -106,7 +114,7 @@ extension ProductsVC: UITableViewDataSource, UITableViewDelegate {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.productCell, for: indexPath) as? ProductCell {
             
-            cell.configureCell(product: products[indexPath.row])
+            cell.configureCell(product: products[indexPath.row], delegate: self)
             
             return cell
         }
@@ -127,5 +135,16 @@ extension ProductsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+}
+
+extension ProductsVC: ProductCellDelegate {
+
+    func productFavorited(product: Product) {
+        UserService.favoriteSelected(product: product)
+        
+        guard let index = products.firstIndex(of: product) else { return }
+        
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 }

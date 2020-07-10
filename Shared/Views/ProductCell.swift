@@ -9,6 +9,11 @@
 import UIKit
 import Kingfisher
 
+protocol ProductCellDelegate : class {
+    
+    func productFavorited(product : Product)
+}
+
 class ProductCell: UITableViewCell {
     
     @IBOutlet weak var productImage: RoundedImageView!
@@ -16,18 +21,22 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    weak var delegate : ProductCellDelegate?
+    private var product : Product!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configureCell(product: Product) {
+    func configureCell(product: Product, delegate: ProductCellDelegate) {
         
+        self.product = product
+        self.delegate = delegate
         productTitle.text = product.name
         
-        // usamos Kingficher para bajar imagenes, en este caso, de Firebase
         if let url = URL(string: product.imageURL) {
             
-            let placeholder = UIImage(named: "placeholder")
+            let placeholder = UIImage(named: AppImages.placeholder)
             productImage.kf.indicatorType = .activity
         
             let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
@@ -38,9 +47,14 @@ class ProductCell: UITableViewCell {
         formatter.numberStyle = .currency
         formatter.locale = Locale.uk
         
-        // convert our price, becouse is Double in String
         if let price = formatter.string(from: product.price as NSNumber) {
             productPrice.text = price
+        }
+
+        if UserService.favorites.contains(product) {
+            favoriteButton.setImage(UIImage(named: AppImages.filledStart), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: AppImages.emptyStart), for: .normal)
         }
     }
 
@@ -48,5 +62,6 @@ class ProductCell: UITableViewCell {
     }
     
     @IBAction func favoriteClicked(_ sender: Any) {
+        delegate?.productFavorited(product: product)
     }
 }

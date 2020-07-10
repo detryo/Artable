@@ -26,7 +26,7 @@ class CategoryCell: UICollectionViewCell {
 // Cogemos la URL de Firebase, y hacemos una pequeña animacion con el Place Holder.
         if let url = URL(string: category.imageURL) {
             
-            let placeHolder = UIImage(named: "placeholder")
+            let placeHolder = UIImage(named: AppImages.placeholder)
             let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.3))]
             categoryImage.kf.indicatorType = .activity
             categoryImage.kf.setImage(with: url, placeholder: placeHolder, options: options)

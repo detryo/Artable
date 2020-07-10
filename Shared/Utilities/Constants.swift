@@ -24,6 +24,9 @@ struct AppImages {
     
     static let GreenCheck = "green_check"
     static let RedCheck = "red_check"
+    static let filledStart = "filled_star"
+    static let emptyStart = "empty_star"
+    static let placeholder = "placeholder"
 }
 
 struct AppColors {
@@ -45,4 +48,5 @@ struct Segues {
     static let toAddEditCategory = "toAddEditCategory"
     static let toEditCategory = "toEditCategory"
     static let toAddEditProduct = "toAddEditProduct"
+    static let toFavorites = "toFavorites"
 }
