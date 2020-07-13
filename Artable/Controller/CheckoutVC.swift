@@ -23,6 +23,15 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupPaymentInfo()
+    }
+    
+    func setupPaymentInfo() {
+        
+        subtotalLabel.text = stripeCart.subTotal.penniesToFormatterCurrency()
+        processingFeeLabel.text = stripeCart.processingFees.penniesToFormatterCurrency()
+        shippingCostLabel.text = stripeCart.shippingFees.penniesToFormatterCurrency()
+        totalLabel.text = stripeCart.total.penniesToFormatterCurrency()
     }
     
     func setupTableView() {
@@ -56,7 +65,7 @@ extension CheckoutVC: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.cartItemCell, for: indexPath) as? CartItemCell {
             
             let product = stripeCart.cartItems[indexPath.row]
-            cell.configureCell(product: product)
+            cell.configureCell(product: product, delegate: self)
             return cell
         }
         return UITableViewCell()
@@ -64,5 +73,14 @@ extension CheckoutVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+}
+
+extension CheckoutVC: CartItemDelegate {
+    
+    func removeItem(product: Product) {
+        stripeCart.removeItemFromCart(item: product)
+        tableView.reloadData()
+        setupPaymentInfo()
     }
 }

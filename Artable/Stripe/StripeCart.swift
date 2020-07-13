@@ -15,7 +15,7 @@ final class _StripeCart {
     var cartItems = [Product]()
     
     // variables for Stripe processing fees
-    private let stripecreditCartCut = 0.029
+    private let stripeCreditCartCut = 0.029
     private let flatFeeCents = 30
     var shippingFees = 0
     
@@ -38,7 +38,7 @@ final class _StripeCart {
         }
         
         let sub = Double(subTotal)
-        let feesAndSub = Int(sub * stripecreditCartCut) - flatFeeCents
+        let feesAndSub = Int(sub * stripeCreditCartCut) - flatFeeCents
         return feesAndSub
     }
     
@@ -50,7 +50,7 @@ final class _StripeCart {
         cartItems.append(item)
     }
     
-    func removeItemFromcart(item: Product) {
+    func removeItemFromCart(item: Product) {
         
         if let index = cartItems.firstIndex(of: item) {
             cartItems.remove(at: index)

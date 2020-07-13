@@ -280,7 +280,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2u3-eD-DdR">
-                                <rect key="frame" x="20" y="108" width="374" height="435"/>
+                                <rect key="frame" x="6" y="108" width="402" height="435"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -292,10 +292,10 @@
                             <constraint firstItem="rbg-rW-BQ8" firstAttribute="bottom" secondItem="v3s-Q3-tKo" secondAttribute="bottom" constant="20" id="7ed-X0-gMp"/>
                             <constraint firstItem="dzT-Ia-XGS" firstAttribute="top" secondItem="2u3-eD-DdR" secondAttribute="bottom" constant="20" id="8b8-aP-yGn"/>
                             <constraint firstItem="OpU-HC-Imf" firstAttribute="centerX" secondItem="qzb-Oq-aDY" secondAttribute="centerX" id="AyQ-Ky-fkh"/>
-                            <constraint firstItem="rbg-rW-BQ8" firstAttribute="trailing" secondItem="2u3-eD-DdR" secondAttribute="trailing" constant="20" id="DjH-97-brd"/>
+                            <constraint firstItem="rbg-rW-BQ8" firstAttribute="trailing" secondItem="2u3-eD-DdR" secondAttribute="trailing" constant="6" id="DjH-97-brd"/>
                             <constraint firstItem="2u3-eD-DdR" firstAttribute="top" secondItem="rbg-rW-BQ8" secondAttribute="top" constant="20" id="TcB-oy-pdY"/>
                             <constraint firstItem="v3s-Q3-tKo" firstAttribute="top" secondItem="dzT-Ia-XGS" secondAttribute="bottom" constant="30" id="cgz-4d-4h9"/>
-                            <constraint firstItem="2u3-eD-DdR" firstAttribute="leading" secondItem="rbg-rW-BQ8" secondAttribute="leading" constant="20" id="ciX-ug-Sqk"/>
+                            <constraint firstItem="2u3-eD-DdR" firstAttribute="leading" secondItem="rbg-rW-BQ8" secondAttribute="leading" constant="6" id="ciX-ug-Sqk"/>
                             <constraint firstItem="dzT-Ia-XGS" firstAttribute="leading" secondItem="qzb-Oq-aDY" secondAttribute="leading" constant="20" id="m7A-lY-a4K"/>
                             <constraint firstItem="v3s-Q3-tKo" firstAttribute="top" secondItem="OpU-HC-Imf" secondAttribute="bottom" constant="6" id="mbK-hd-HRn"/>
                         </constraints>

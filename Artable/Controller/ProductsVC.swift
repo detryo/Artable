@@ -147,4 +147,9 @@ extension ProductsVC: ProductCellDelegate {
         
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
+    
+    func productAddToCart(product: Product) {
+        
+        stripeCart.addItemToCart(item: product)
+    }
 }

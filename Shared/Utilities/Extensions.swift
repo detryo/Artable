@@ -28,3 +28,19 @@ extension UIViewController {
 extension Locale {
     static let uk = Locale(identifier: "en_GB")
 }
+
+extension Int {
+    
+    func penniesToFormatterCurrency() -> String {
+
+        let pounds = Double(self) / 100
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_GB")
+        
+        if let poundString = formatter.string(from: pounds as NSNumber) {
+            return poundString
+        }
+        return "£0.0"
+    }
+}
