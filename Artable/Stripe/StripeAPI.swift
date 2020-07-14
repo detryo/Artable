@@ -10,6 +10,8 @@ import Foundation
 import Stripe
 import FirebaseFunctions
 
+let stripeAPI = _StripeAPI()
+
 class _StripeAPI: NSObject, STPCustomerEphemeralKeyProvider {
     
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {

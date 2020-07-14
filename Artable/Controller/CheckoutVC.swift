@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 class CheckoutVC: UIViewController {
 
@@ -19,11 +20,13 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var paymentContext: STPPaymentContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupPaymentInfo()
+        setupStripeConfig()
     }
     
     func setupPaymentInfo() {
@@ -40,18 +43,32 @@ class CheckoutVC: UIViewController {
         tableView.register(UINib(nibName: Identifiers.cartItemCell, bundle: nil), forCellReuseIdentifier: Identifiers.cartItemCell)
     }
     
+    func setupStripeConfig() {
+        
+        let config = STPPaymentConfiguration.shared()
+        config.requiredBillingAddressFields = .name
+        config.requiredShippingAddressFields = [.postalAddress]
+        
+        let customerContext = STPCustomerContext(keyProvider: stripeAPI)
+        paymentContext = STPPaymentContext(customerContext: customerContext, configuration: config, theme: .default())
+        
+        paymentContext.paymentAmount = stripeCart.total
+        paymentContext.delegate = self
+        paymentContext.hostViewController = self
+    }
+    
     @IBAction func placeOrderClicked(_ sender: Any) {
         
     }
     
     @IBAction func paymentMethodClicked(_ sender: Any) {
         
+        paymentContext.pushPaymentOptionsViewController()
     }
     
     @IBAction func shippingMethodClicked(_ sender: Any) {
-        
+        paymentContext.pushShippingViewController()
     }
-    
 }
 
 extension CheckoutVC: UITableViewDataSource, UITableViewDelegate {
@@ -82,5 +99,75 @@ extension CheckoutVC: CartItemDelegate {
         stripeCart.removeItemFromCart(item: product)
         tableView.reloadData()
         setupPaymentInfo()
+        paymentContext.paymentAmount = stripeCart.total
+    }
+}
+
+extension CheckoutVC: STPPaymentContextDelegate {
+    
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        
+        // Updating the selected payment method
+        if let paymentMethod = paymentContext.selectedPaymentOption {
+            paymentMethodButton.setTitle(paymentMethod.label , for: .normal)
+        } else {
+            paymentMethodButton.setTitle("Select Method", for: .normal)
+        }
+        
+        // Updating the selected shipping method
+        if let shippingMethod = paymentContext.selectedShippingMethod {
+            shippingMethodButton.setTitle(shippingMethod.label, for: .normal)
+            stripeCart.shippingFees = Int(Double(truncating: shippingMethod.amount) * 100)
+            setupPaymentInfo()
+        } else {
+            shippingMethodButton.setTitle("Select Method", for: .normal)
+        }
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        
+        activityIndicator.stopAnimating()
+        
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        let retry = UIAlertAction(title: "Retry", style: .default) { (action) in
+            self.paymentContext.retryLoading()
+        }
+        alertController.addAction(cancel)
+        alertController.addAction(retry)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
+    }
+ 
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        
+    }
+    
+    // este metodo es para las direcciones, este ejemplo es de USA, busca las de UK
+    func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
+        
+        let upsGround = PKShippingMethod()
+        upsGround.amount = 0
+        upsGround.label = "UPS Ground"
+        upsGround.detail = "Arrives in 3-5 days"
+        upsGround.identifier = "ups_ground"
+        
+        let fedex = PKShippingMethod()
+        fedex.amount = 6.99
+        fedex.label = "FedEx"
+        fedex.detail = "Arrives tomorrow"
+        fedex.identifier = "fedex"
+        
+        if address.country == "GB" {
+            completion(.valid, nil, [upsGround, fedex], fedex)
+        } else {
+            completion(.invalid, nil, nil, nil)
+        }
     }
 }
