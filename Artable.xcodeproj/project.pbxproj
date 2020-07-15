@@ -58,6 +58,9 @@
 		366B74F624910D8D00F2B026 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366B74D324910D2A00F2B026 /* Assets.xcassets */; };
 		3684408F24AF7AB400B1023A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3684408E24AF7AB400B1023A /* User.swift */; };
 		3695620E24BDAD12008594BB /* StripeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695620D24BDAD12008594BB /* StripeAPI.swift */; };
+		36A6EC5424BF5159008F9ADA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36437F7924B1DF2C0087FF0C /* UserService.swift */; };
+		36A6EC5524BF51DD008F9ADA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3684408E24AF7AB400B1023A /* User.swift */; };
+		36A6EC5624BF5220008F9ADA /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363306AB24B88B20008614C0 /* StripeCart.swift */; };
 		36D9332B249910ED0082C420 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D93329249910ED0082C420 /* ForgotPasswordVC.swift */; };
 		36D9332C249910ED0082C420 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D9332A249910ED0082C420 /* ForgotPasswordVC.xib */; };
 		36DE79E9249128BA001ABE85 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DE79E8249128BA001ABE85 /* LoginStoryboard.storyboard */; };
@@ -562,14 +565,17 @@
 				36623718249A3344005C6459 /* Category.swift in Sources */,
 				366038A124AB543E00D1060D /* AddEditProductsVC.swift in Sources */,
 				366B74E924910D7D00F2B026 /* AdminHomeVC.swift in Sources */,
+				36A6EC5524BF51DD008F9ADA /* User.swift in Sources */,
 				366B74E524910D7D00F2B026 /* AppDelegate.swift in Sources */,
 				3659EB2E24A9FCBD007CBC20 /* AddEditCategoryVC.swift in Sources */,
 				3626F77F249A62B500365252 /* ProductsVC.swift in Sources */,
 				3659EB2924A9F83F007CBC20 /* Extensions.swift in Sources */,
 				366508A924A0AD7E005E7869 /* ProductCell.swift in Sources */,
+				36A6EC5424BF5159008F9ADA /* UserService.swift in Sources */,
 				366B74E724910D7D00F2B026 /* SceneDelegate.swift in Sources */,
 				363306AA24B883E9008614C0 /* CartItemCell.swift in Sources */,
 				3662371C249A35AB005C6459 /* CategoryCell.swift in Sources */,
+				36A6EC5624BF5220008F9ADA /* StripeCart.swift in Sources */,
 				3659EB2824A9F5BF007CBC20 /* Constants.swift in Sources */,
 				3659EB2A24A9F871007CBC20 /* ProductDetailVC.swift in Sources */,
 			);

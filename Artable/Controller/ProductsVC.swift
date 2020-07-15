@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class ProductsVC: UIViewController {
+class ProductsVC: UIViewController, ProductCellDelegate {
     
     // Oulets
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +26,16 @@ class ProductsVC: UIViewController {
         database = Firestore.firestore()
         setupTableView()
         setupQuery()
+    }
+    
+    func productFavorited(product: Product) {
+        UserService.favoriteSelected(product: product)
+        guard let index = products.firstIndex(of: product) else { return }
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+
+    func productAddToCart(product: Product) {
+        stripeCart.addItemToCart(item: product)
     }
     
     func setupTableView() {
@@ -135,21 +145,5 @@ extension ProductsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
-    }
-}
-
-extension ProductsVC: ProductCellDelegate {
-
-    func productFavorited(product: Product) {
-        UserService.favoriteSelected(product: product)
-        
-        guard let index = products.firstIndex(of: product) else { return }
-        
-        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-    }
-    
-    func productAddToCart(product: Product) {
-        
-        stripeCart.addItemToCart(item: product)
     }
 }
