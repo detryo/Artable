@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import FirebaseFunctions
 
 class CheckoutVC: UIViewController {
 
@@ -30,7 +31,6 @@ class CheckoutVC: UIViewController {
     }
     
     func setupPaymentInfo() {
-        
         subtotalLabel.text = stripeCart.subTotal.penniesToFormatterCurrency()
         processingFeeLabel.text = stripeCart.processingFees.penniesToFormatterCurrency()
         shippingCostLabel.text = stripeCart.shippingFees.penniesToFormatterCurrency()
@@ -58,11 +58,11 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func placeOrderClicked(_ sender: Any) {
-        
+        paymentContext.requestPayment()
+        activityIndicator.startAnimating()
     }
     
     @IBAction func paymentMethodClicked(_ sender: Any) {
-        
         paymentContext.pushPaymentOptionsViewController()
     }
     
@@ -143,13 +143,64 @@ extension CheckoutVC: STPPaymentContextDelegate {
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
+        
+        // Item potency key
+        let idempotency = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        
+        let data : [String: Any] = [
+                                    "total_amount" : stripeCart.total,
+                                    "customer_id" : UserService.user.stripeID,
+                                    "payment_method_id" : paymentResult.paymentMethod?.stripeId ?? "",
+                                    "idempotency" : idempotency ]
+        
+        Functions.functions().httpsCallable("createCharge").call(data) { (result, error) in
+            
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                self.simpleAlert(title: "Error", message: "Unable to make charge.")
+                completion(STPPaymentStatus.error, error)
+                return
+            }
+            
+            stripeCart.clearCart()
+            self.tableView.reloadData()
+            self.setupPaymentInfo()
+            completion(.success, nil)
+        }
     }
- 
+
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         
+        let title: String
+        let message: String
+        
+        switch status {
+        case .error:
+            activityIndicator.stopAnimating()
+            title = "Error"
+            message = error?.localizedDescription ?? ""
+            
+        case .success:
+            activityIndicator.stopAnimating()
+            title = "Success"
+            message = "Thanks you for your purchase"
+            
+        case .userCancellation:
+            return
+            
+        @unknown default:
+            fatalError()
+        }
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
-    
-    // este metodo es para las direcciones, este ejemplo es de USA, busca las de UK
+
     func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
         
         let upsGround = PKShippingMethod()
