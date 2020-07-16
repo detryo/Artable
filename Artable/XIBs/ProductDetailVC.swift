@@ -46,6 +46,11 @@ class ProductDetailVC: UIViewController {
     }
 
     @IBAction func addCartClicked(_ sender: Any) {
+        
+        if UserService.isGuest {
+            self.simpleAlert(title: "Hi friend", message: "This is a user only feature, please create a registered user to take advantage of all our features.")
+                return
+        }
         // Add product to cart
         stripeCart.addItemToCart(item: product)
         dismiss(animated: true, completion: nil)

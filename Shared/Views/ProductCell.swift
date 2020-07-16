@@ -58,8 +58,15 @@ class ProductCell: UITableViewCell {
             favoriteButton.setImage(UIImage(named: AppImages.emptyStart), for: .normal)
         }
     }
+    
+    func userServiceGues() {
+        if UserService.isGuest {
+            return
+        }
+    }
 
     @IBAction func addToCartClicked(_ sender: Any) {
+        userServiceGues()
         delegate?.productAddToCart(product: product)
     }
     

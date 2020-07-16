@@ -29,12 +29,24 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     }
     
     func productFavorited(product: Product) {
+        
+       if UserService.isGuest {
+            self.simpleAlert(title: "Hi friend", message: "This is a user only feature, please create a registered user to take advantage of all our features.")
+            return
+        }
+        
         UserService.favoriteSelected(product: product)
         guard let index = products.firstIndex(of: product) else { return }
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 
     func productAddToCart(product: Product) {
+        
+        if UserService.isGuest {
+            self.simpleAlert(title: "Hi friend", message: "This is a user only feature, please create a registered user to take advantage of all our features.")
+            return
+        }
+        
         stripeCart.addItemToCart(item: product)
     }
     
